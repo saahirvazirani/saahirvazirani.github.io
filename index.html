@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saahir Vazirani — Portfolio</title>
+    <meta name="description" content="The personal portfolio of Saahir Vazirani. Clean, minimal, and responsive." />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- SEO / Social (customize as needed) -->
+    <meta property="og:title" content="Saahir Vazirani — Portfolio" />
+    <meta property="og:description" content="Explore Saahir's background, experience, projects, skills, and ways to get in touch." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saahirvazirani.github.io" />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind (Play CDN for simplicity on GitHub Pages) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config: extend font family and soft shadow
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                'Inter',
+                'ui-sans-serif',
+                'system-ui',
+                'Segoe UI',
+                'Helvetica Neue',
+                'Arial',
+                'Noto Sans',
+                'sans-serif'
+              ]
+            },
+            boxShadow: {
+              soft: '0 8px 30px rgba(2, 6, 23, 0.06)'
+            }
+          }
+        }
+      };
+    </script>
+
+  <!-- Favicons (universal) -->
+  <!-- Uses provided assets in `favicon_io (1)/` -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io%20(1)/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io%20(1)/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io%20(1)/favicon-16x16.png" />
+  <link rel="manifest" href="favicon_io%20(1)/site.webmanifest" />
+  <link rel="shortcut icon" href="favicon_io%20(1)/favicon.ico" />
+
+    <!-- Minimal custom CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="font-sans antialiased text-slate-800 bg-white selection:bg-slate-800 selection:text-white">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-100">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#home" class="inline-flex items-center gap-2 text-slate-900 font-semibold tracking-tight">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-slate-900 text-white text-xs">SV</span>
+            <span class="hidden sm:block">Saahir Vazirani</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a class="text-slate-600 hover:text-slate-900 transition" href="#about">About</a>
+            <a class="text-slate-600 hover:text-slate-900 transition" href="#experience">Experience</a>
+            <a class="text-slate-600 hover:text-slate-900 transition" href="#projects">Projects</a>
+            <a class="text-slate-600 hover:text-slate-900 transition" href="#skills">Skills</a>
+            <a class="text-slate-600 hover:text-slate-900 transition" href="#contact">Contact</a>
+            
+          </nav>
+
+          <!-- Mobile menu toggle -->
+          <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" class="md:hidden inline-flex items-center justify-center rounded-md p-2 ring-1 ring-slate-300 hover:ring-slate-400 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-100">
+        <div class="mx-auto max-w-7xl px-6 py-3 flex flex-col gap-2 text-sm">
+          <a class="py-2 text-slate-700 hover:text-slate-900" href="#about">About</a>
+          <a class="py-2 text-slate-700 hover:text-slate-900" href="#experience">Experience</a>
+          <a class="py-2 text-slate-700 hover:text-slate-900" href="#projects">Projects</a>
+          <a class="py-2 text-slate-700 hover:text-slate-900" href="#skills">Skills</a>
+          <a class="py-2 text-slate-700 hover:text-slate-900" href="#contact">Contact</a>
+          
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero / Landing -->
+      <section class="relative">
+        <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Text -->
+            <div class="lg:col-span-7 reveal">
+              <p class="text-xs tracking-widest uppercase text-slate-500">Portfolio</p>
+              <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">Saahir Vazirani</h1>
+              <!-- LinkedIn headline or role -->
+              <p class="mt-3 text-xl text-slate-600">Student @ Saint Joseph High School | NJ Scholars ’25 | Trusted Researcher @ Ballotpedia</p>
+              <p class="mt-6 max-w-2xl text-slate-600">I’m passionate about AI governance, safety, and policy—building and advocating for human‑centric AI that uplifts communities and strengthens civic engagement.</p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#contact" class="inline-flex items-center rounded-lg bg-slate-900 text-white px-4 py-2.5 text-sm font-medium shadow-sm hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/70 transition">Contact Me</a>
+                <a href="https://github.com/saahirvazirani" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg ring-1 ring-slate-300 text-slate-700 px-4 py-2.5 text-sm font-medium hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/70 transition">GitHub</a>
+                <!-- Update with your real LinkedIn URL -->
+                <a href="https://www.linkedin.com/in/saahir-vazirani-5850a9297" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg ring-1 ring-slate-300 text-slate-700 px-4 py-2.5 text-sm font-medium hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/70 transition">LinkedIn</a>
+              </div>
+            </div>
+            <!-- Visual -->
+            <div class="lg:col-span-5 reveal">
+              <div class="relative mx-auto w-40 h-40 sm:w-56 sm:h-56 rounded-full ring-1 ring-slate-200 shadow-soft overflow-hidden bg-slate-50">
+                <!-- Using your provided headshot -->
+                <img src="Resources/Headshot-Saahir.jpeg" alt="Headshot of Saahir Vazirani" class="absolute inset-0 w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-20 md:py-28 border-t border-slate-100">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-4 reveal">
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">About</h2>
+            </div>
+            <div class="lg:col-span-8 reveal">
+              <p class="text-slate-600 leading-relaxed">I’m a student and civic advocate focused on AI governance, safety, and public policy. I contribute research and program support at Ballotpedia, lead youth policy initiatives through Encode and the YMCA Youth & Government program, and explore responsible, human‑centered technology. I value clarity, evidence‑based work, and impactful collaboration.</p>
+              <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-slate-600 text-sm">
+                <li class="flex items-center gap-2"><span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-400"></span> Education: Saint Joseph High School — Metuchen, NJ</li>
+                <li class="flex items-center gap-2"><span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-400"></span> Location: South Amboy, New Jersey</li>
+                <li class="flex items-center gap-2"><span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-400"></span> Interests: AI Governance, AI Safety, Civic Engagement</li>
+                <li class="flex items-center gap-2"><span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-400"></span> Open to: Policy, Research, and Tech-for-Good collaborations</li>
+              </ul>
+              <p class="mt-4 text-slate-600 text-sm">Certifications: Future of AI Course · AI Safety Fundamentals (Alignment) · Heartsaver CPR & AED · ACTFL Spanish Assessment</p>
+              <div class="mt-6 grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="text-sm font-medium text-slate-900">Education</h3>
+                  <ul class="mt-2 space-y-1 text-sm text-slate-600">
+                    <li>Saint Joseph High School — Metuchen, NJ (Aug 2022 — May 2026)</li>
+                    <li>New Jersey Scholars @ The Lawrenceville School (Jun 2025 — Aug 2025)</li>
+                    <li>American Legion NJ Boys State @ Rider University (Jun 2025 — Aug 2025)</li>
+                    <li>AI Safety Fundamentals — Bluedot (Oct 2024 — Feb 2025)</li>
+                    <li>MIT Blueprint (Learnathon + Hackathon), Mar 2024</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-slate-900">Honors & Awards</h3>
+                  <ul class="mt-2 space-y-1 text-sm text-slate-600">
+                    <li>AP Scholar with Distinction</li>
+                    <li>International Research Olympiad — Semifinalist</li>
+                    <li>Conference on National Affairs — Delegate</li>
+                    <li>American Computer Science League — Nationals Qualifier</li>
+                    <li>Computing Award — Rochester Institute of Technology</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="py-20 md:py-28 border-t border-slate-100">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-4 reveal">
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Experience</h2>
+              <p class="mt-3 text-slate-600 text-sm">Each role includes short prose and 3–5 high‑impact bullets reflecting scope and outcomes.</p>
+            </div>
+            <div class="lg:col-span-8">
+              <ol class="relative border-l border-slate-200 ml-3">
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-900"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Ballotpedia — Trusted Researcher & Fellows Program Assistant</h3>
+                    <time class="text-xs text-slate-500">Aug 2024 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Advance Ballotpedia’s civic data via QA, research, and support for large volunteer fellowship cohorts (250+).</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Quality‑assured candidate attributes and cohort training research with detailed answer keys.</li>
+                    <li>Supported Fellows on Slack to unblock tasks and clarify research approaches.</li>
+                    <li>Coordinated with program managers to maintain data quality across multiple cohorts.</li>
+                    <li>Researched local candidates via public sources (websites, social media) to enrich records.</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Lieutenant Governor — NJ YMCA Youth & Government</h3>
+                    <time class="text-xs text-slate-500">Apr 2025 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Elected officer supporting 500+ students; oversee statewide operations and mentorship in a civic leadership program.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Co-led a 21‑member officer team to plan large‑scale conferences (~450 delegates).</li>
+                    <li>Launched AI & Internet Responsibility campaign to promote ethical tech use.</li>
+                    <li>Facilitated debate procedures and content publishing across committees.</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Encode — Advocacy & Education Roles</h3>
+                    <time class="text-xs text-slate-500">Aug 2024 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Director of Advocacy (NJ); HS AI Action Council; HS Education Working Group — advancing responsible AI policy and literacy.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Organized statewide outreach, town halls, and civic actions; met with legislators to advance policy proposals.</li>
+                    <li>Shaped engagement strategies and led projects to advance AI literacy and civic awareness.</li>
+                    <li>Supported education initiatives to expand ethical tech use in schools.</li>
+                    <li>Coordinated phone/text/email banking campaigns to drive participation.</li>
+                  </ul>
+                </li>
+                
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Co‑Executive Director & Director of Civic Engagement — Leaders Across the World</h3>
+                    <time class="text-xs text-slate-500">Sep 2024 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Drive youth civic engagement programs and organizational strategy.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Designed and led initiatives to expand youth participation in civic projects.</li>
+                    <li>Coordinated programming and partnerships to scale impact.</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Research Associate — Perrin Research Institution</h3>
+                    <time class="text-xs text-slate-500">Mar 2025 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Policy research supporting federal agencies, foreign ministries, and global institutions.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Selected as 1 of 30 from 3,500+ applicants for a high‑impact cohort.</li>
+                    <li>Produced data‑backed insights featured at global forums (e.g., UNGA, AI Safety Summit Geneva).</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Research Collaborator — Tributary (with Prof. Gormanly)</h3>
+                    <time class="text-xs text-slate-500">Jan 2025 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Collaborating with Professor Gormanly on an initiative to determine statistical uniqueness.</p>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Volunteer Research Assistant — Purdue GRAIL</h3>
+                    <time class="text-xs text-slate-500">Oct 2024 — Present</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Supported research tasks for the GRAIL lab; contributed to data and literature workflows.</p>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Youth Advisory & Technology Committees — Office of Rep. Frank Pallone Jr.</h3>
+                    <time class="text-xs text-slate-500">Dec 2023 — Jul 2025</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Represented 170k+ students; contributed memos and agenda input on technology policy.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Drafted technology policy memos and recommendations.</li>
+                    <li>Collaborated on legislative agenda within the education committee.</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">American Legion Jersey Boys State — Delegate</h3>
+                    <time class="text-xs text-slate-500">Jun 2025</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Immersive state‑level government simulation; held elected and appointed roles.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Assemblyman; Chair, Technology Committee; Director of Public Welfare.</li>
+                    <li>Ran for Mayor; runner‑up by two votes; authored a public policy report.</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Political Campaign Intern — Monmouth County Democrats</h3>
+                    <time class="text-xs text-slate-500">Jul 2024 — Aug 2024</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Supported campaign operations, outreach, and digital content.</p>
+                  <ul class="mt-2 text-slate-600 text-sm list-disc pl-5">
+                    <li>Built the MCD Turf Tracker with Google Sheets + Votebuilder automation.</li>
+                    <li>Made 230+ calls; coordinated ~10 volunteers; logged 20+ voter contacts.</li>
+                    <li>Produced 15+ Canva posts; edited TikToks; staffed events including county fair.</li>
+                  </ul>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Software Engineering Fellow — Headstarter AI</h3>
+                    <time class="text-xs text-slate-500">Jul 2024 — Aug 2024</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Hands‑on software projects; focused on practical engineering and iteration.</p>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">Builder — buildspace Nights & Weekends S5</h3>
+                    <time class="text-xs text-slate-500">Jun 2024 — Jul 2024</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Created and shipped an AI‑based policy application; graduated (top 7.4%).</p>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">CONA Delegate — YMCA Blue Ridge Assembly</h3>
+                    <time class="text-xs text-slate-500">Jun 2024 — Jul 2024</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">Represented NJ at a national forum; authored proposal on cybercrime and Zero‑Trust Architecture.</p>
+                </li>
+                <!-- Item -->
+                <li class="reveal ml-6 pl-6 py-6">
+                  <span class="absolute -left-2.5 mt-2 flex h-3 w-3 items-center justify-center rounded-full bg-slate-300"></span>
+                  <div class="flex items-center justify-between gap-2">
+                    <h3 class="font-semibold text-slate-900">New Jersey Youth Advocate — YMCA of the USA</h3>
+                    <time class="text-xs text-slate-500">Nov 2023 — Feb 2024</time>
+                  </div>
+                  <p class="mt-1 text-slate-600 text-sm">One of two Youth Advocates in NJ; lobbied U.S. Congressional offices on youth‑impacting policy.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="py-20 md:py-28 border-t border-slate-100">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="flex items-end justify-between gap-6">
+            <div class="reveal">
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Projects</h2>
+              <p class="mt-3 text-slate-600 text-sm">A curated selection. Swap placeholders with your real work or links.</p>
+            </div>
+            <a href="https://github.com/saahirvazirani" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center text-sm text-slate-600 hover:text-slate-900 transition">View all on GitHub →</a>
+          </div>
+
+          <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Autonomy in Conflict -->
+            <article class="reveal group rounded-xl ring-1 ring-slate-200 hover:ring-slate-300 transition bg-white overflow-hidden shadow-soft/0 hover:shadow-soft">
+              <div class="p-5">
+                <h3 class="font-semibold text-slate-900 group-hover:text-slate-700 transition">Autonomy in Conflict — IHL & AWS</h3>
+                <p class="mt-1 text-sm text-slate-600">Legal, technical, and strategic challenges of AI‑enabled autonomous weapon systems under IHL.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">Policy</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">IHL</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">AI</span>
+                </div>
+                <div class="mt-4 flex gap-4 text-sm">
+                  <a class="text-slate-600 hover:text-slate-900" href="https://www.linkedin.com/in/saahir-vazirani-5850a9297/details/projects/1755657762210/single-media-viewer/?profileId=ACoAAEe9GfUBstDAcX0Gdg7trI5PHexDBFq5yFE" target="_blank" rel="noopener">Link</a>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">Jun 2025 — Aug 2025</p>
+              </div>
+            </article>
+
+            <!-- Green AI in California -->
+            <article class="reveal group rounded-xl ring-1 ring-slate-200 hover:ring-slate-300 transition bg-white overflow-hidden shadow-soft/0 hover:shadow-soft">
+              <div class="p-5">
+                <h3 class="font-semibold text-slate-900 group-hover:text-slate-700 transition">A Call for ‘Green AI’ in California</h3>
+                <p class="mt-1 text-sm text-slate-600">Evaluated existing vs. alternative regulations; submission for Berkeley AI Policy Hackathon.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">Policy</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">Climate</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">AI</span>
+                </div>
+                <div class="mt-4 flex gap-4 text-sm">
+                  <a class="text-slate-600 hover:text-slate-900" href="https://apartresearch.com/sprints/collaborations/berkeley-ai-policy-hackathon-2025-04-14-to-2025-04-26" target="_blank" rel="noopener">Apart Research</a>
+                  <a class="text-slate-600 hover:text-slate-900" href="https://www.linkedin.com/in/saahir-vazirani-5850a9297/details/projects/1745438924661/single-media-viewer/?profileId=ACoAAEe9GfUBstDAcX0Gdg7trI5PHexDBFq5yFE" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">Apr 2025</p>
+              </div>
+            </article>
+
+            <!-- Machine Unlearning Survey -->
+            <article class="reveal group rounded-xl ring-1 ring-slate-200 hover:ring-slate-300 transition bg-white overflow-hidden shadow-soft/0 hover:shadow-soft">
+              <div class="p-5">
+                <h3 class="font-semibold text-slate-900 group-hover:text-slate-700 transition">Machine Unlearning in LLMs</h3>
+                <p class="mt-1 text-sm text-slate-600">Survey + empirical insights with Qwen 1.5 1.8B; final project for AI Safety Fundamentals.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">AI Safety</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">LLMs</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">Research</span>
+                </div>
+                <div class="mt-4 flex gap-4 text-sm">
+                  <a class="text-slate-600 hover:text-slate-900" href="https://www.lesswrong.com/posts/zmfXZEsiycGLP9YZW/machine-unlearning-in-large-language-models-a-comprehensive-1" target="_blank" rel="noopener">Article</a>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">Jan 2025 — Feb 2025</p>
+              </div>
+            </article>
+
+            <!-- Sleeper Agents Detector -->
+            <article class="reveal group rounded-xl ring-1 ring-slate-200 hover:ring-slate-300 transition bg-white overflow-hidden shadow-soft/0 hover:shadow-soft">
+              <div class="p-5">
+                <h3 class="font-semibold text-slate-900 group-hover:text-slate-700 transition">Sleeper Agents Detector</h3>
+                <p class="mt-1 text-sm text-slate-600">Interactive demo showing risks of sleeper agents; built for Apart Research demo‑jam.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">Demo</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-100 text-slate-700 px-2 py-1 text-xs">AI Safety</span>
+                </div>
+                <div class="mt-4 flex gap-4 text-sm">
+                  <a class="text-slate-600 hover:text-slate-900" href="https://apartresearch.com/project/sleeper-agents-detector" target="_blank" rel="noopener">Project</a>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">Aug 2024</p>
+              </div>
+            </article>
+
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="py-20 md:py-28 border-t border-slate-100">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-4 reveal">
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Skills</h2>
+              <p class="mt-3 text-slate-600 text-sm">A snapshot of tools and strengths.</p>
+            </div>
+            <div class="lg:col-span-8 reveal">
+      <div class="grid sm:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="font-medium text-slate-900">Technologies</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="skill">AI Governance</span>
+                    <span class="skill">Policy Research</span>
+                    <span class="skill">Civic Data</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Next.js</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">Tailwind CSS</span>
+                    <span class="skill">MongoDB</span>
+                    <span class="skill">Google Sheets</span>
+                    <span class="skill">English→Spanish</span>
+                    <span class="skill">Git</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-medium text-slate-900">Strengths</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="skill">Leadership</span>
+                    <span class="skill">Communication</span>
+                    <span class="skill">Research</span>
+                    <span class="skill">Public Speaking</span>
+                    <span class="skill">Spanish</span>
+                    <span class="skill">Collaboration</span>
+                    <span class="skill">Initiative</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-20 md:py-28 border-t border-slate-100">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-4 reveal">
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Get in touch</h2>
+              <p class="mt-3 text-slate-600 text-sm">Use the form or reach out directly via the links below.</p>
+              <div class="mt-6 flex flex-col gap-3 text-sm">
+                <!-- Primary email -->
+                <a class="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900" href="mailto:vaziranisaahir@gmail.com">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-900 text-white">
+                    @
+                  </span>
+                  vaziranisaahir@gmail.com
+                </a>
+                <a class="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900" href="https://www.linkedin.com/in/saahir-vazirani-5850a9297" target="_blank" rel="noopener">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-900 text-white">
+                    in
+                  </span>
+                  LinkedIn
+                </a>
+                <a class="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900" href="https://github.com/saahirvazirani" target="_blank" rel="noopener">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-900 text-white">
+                    GH
+                  </span>
+                  GitHub
+                </a>
+                  
+        <!-- Use mailto to open email client with prefilled subject/body -->
+        <form id="contact-form" action="mailto:vaziranisaahir@gmail.com" method="GET" novalidate class="grid grid-cols-1 gap-4">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" class="mt-1 block w-full rounded-lg ring-1 ring-slate-300 focus:ring-2 focus:ring-slate-400/70 px-3 py-2 text-slate-900 placeholder-slate-400 outline-none" />
+                  </div>
+          <div></div>
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
+                  <textarea id="message" name="body" rows="5" placeholder="How can I help?" class="mt-1 block w-full rounded-lg ring-1 ring-slate-300 focus:ring-2 focus:ring-slate-400/70 px-3 py-2 text-slate-900 placeholder-slate-400 outline-none"></textarea>
+                </div>
+                <div class="flex items-center gap-3">
+                  <button type="submit" class="inline-flex items-center rounded-lg bg-slate-900 text-white px-4 py-2.5 text-sm font-medium shadow-sm hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/70 transition">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-100">
+      <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© <span id="year"></span> Saahir Vazirani. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a class="text-slate-600 hover:text-slate-900" href="#about">About</a>
+          <a class="text-slate-600 hover:text-slate-900" href="#projects">Projects</a>
+          <a class="text-slate-600 hover:text-slate-900" href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactivity -->
+  <script src="./script.js?v=2"></script>
+  </body>
+</html>
