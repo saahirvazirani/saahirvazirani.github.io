@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | Saahir Vazirani</title>
+    <meta name="description" content="Writing by Saahir Vazirani on AI safety, public policy, and technology." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page blog-page">
+      <header class="hero">
+        <p class="back-link"><a href="index.html">← Back to home</a></p>
+        <h1>Blogs</h1>
+        <p class="intro">Notes on AI safety, public policy, and the institutions shaping advanced technology.</p>
+      </header>
+
+      <section class="section" aria-labelledby="blog-heading">
+        <h2 id="blog-heading">Writing</h2>
+        <div id="blog-list" class="blog-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="blogs/posts.js"></script>
+    <script>
+      const blogList = document.querySelector("#blog-list");
+      const posts = window.BLOG_POSTS || [];
+
+      if (posts.length === 0) {
+        blogList.innerHTML =
+          '<div class="blog-empty"><p>No posts yet. Send me a completed <a href="BLOG_TEMPLATE.md">blog post template</a> and I can format and publish it here.</p></div>';
+      } else {
+        posts.forEach((post) => {
+          const article = document.createElement("article");
+          article.className = "blog-post";
+
+          const heading = document.createElement("h3");
+          heading.textContent = post.title;
+          article.append(heading);
+
+          const date = document.createElement("p");
+          date.className = "blog-meta";
+          date.textContent = post.date;
+          article.append(date);
+
+          if (post.summary) {
+            const summary = document.createElement("p");
+            summary.className = "blog-summary";
+            summary.textContent = post.summary;
+            article.append(summary);
+          }
+
+          (post.body || []).forEach((paragraph) => {
+            const body = document.createElement("p");
+            body.textContent = paragraph;
+            article.append(body);
+          });
+
+          if (post.links && post.links.length) {
+            const links = document.createElement("p");
+            links.className = "blog-links";
+            post.links.forEach((item, index) => {
+              if (index > 0) links.append(" · ");
+              const link = document.createElement("a");
+              link.href = item.url;
+              link.target = "_blank";
+              link.rel = "noreferrer";
+              link.textContent = item.label;
+              links.append(link);
+            });
+            article.append(links);
+          }
+
+          blogList.append(article);
+        });
+      }
+    </script>
+  </body>
+</html>
