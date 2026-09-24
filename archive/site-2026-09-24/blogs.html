@@ -3,39 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Writing | Saahir Vazirani</title>
+    <title>Blogs | Saahir Vazirani</title>
     <meta name="description" content="Writing by Saahir Vazirani on AI safety, public policy, and technology." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page blog-page">
-      <header class="site-header">
-        <a class="site-name" href="index.html">Saahir Vazirani</a>
-        <nav aria-label="Primary navigation">
-          <a href="index.html#research">Research</a>
-          <a href="index.html#work">Work</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
+      <header class="hero">
+        <p class="back-link"><a href="index.html">← Back to home</a></p>
+        <h1>Blogs</h1>
+        <p class="intro">Notes on AI safety, public policy, and the institutions shaping advanced technology.</p>
       </header>
 
-      <section class="intro-block blog-intro" aria-labelledby="page-title">
-        <p class="eyebrow"><a href="index.html">← Back to home</a></p>
-        <h1 id="page-title">Writing</h1>
-        <p class="lede">Notes on AI safety, public policy, technology, and figuring things out in public.</p>
-      </section>
-
-      <section class="section" aria-labelledby="posts-heading">
-        <div class="section-heading">
-          <p class="section-index">01</p>
-          <h2 id="posts-heading">Posts</h2>
-        </div>
+      <section class="section" aria-labelledby="blog-heading">
+        <h2 id="blog-heading">Writing</h2>
         <div id="blog-list" class="blog-list" aria-live="polite"></div>
       </section>
-
-      <footer class="site-footer">
-        <p>Have a question or want to suggest a topic?</p>
-        <p><a href="mailto:vaziranisaahir@gmail.com">vaziranisaahir@gmail.com</a> · <a href="BLOG_TEMPLATE.md">Suggest a post</a></p>
-      </footer>
     </main>
 
     <script src="blogs/posts.js"></script>
@@ -51,14 +34,14 @@
           const article = document.createElement("article");
           article.className = "blog-post";
 
-          const date = document.createElement("p");
-          date.className = "post-date";
-          date.textContent = post.date;
-          article.append(date);
-
           const heading = document.createElement("h3");
           heading.textContent = post.title;
           article.append(heading);
+
+          const date = document.createElement("p");
+          date.className = "blog-meta";
+          date.textContent = post.date;
+          article.append(date);
 
           if (post.summary) {
             const summary = document.createElement("p");
