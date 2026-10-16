@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-16T20:49:38.370Z",
+        "reason": "Intentional uppercase treatment is limited to short metadata labels, section numbers, and dates; body paragraphs remain sentence case."
+      }
+    ]
+  }
+}
