@@ -1,5 +1,13 @@
 const SUBSTACK_FEED_URL = "https://saahirvazirani.substack.com/feed";
 const SUBSTACK_PROFILE_URL = "https://substack.com/@saahirvazirani";
+const SUBSTACK_FALLBACK_POSTS = [
+  {
+    title: "Coming soon",
+    link: "https://saahirvazirani.substack.com/p/coming-soon",
+    date: "Jan 27, 2025",
+    excerpt: "This is Saahir's Substack.",
+  },
+];
 
 function substackText(value) {
   const documentFragment = new DOMParser().parseFromString(value || "", "text/html");
@@ -62,15 +70,23 @@ function renderSubstackPosts(container, posts) {
 }
 
 function renderSubstackFallback(container) {
-  container.innerHTML =
-    `<p class="substack-fallback">Recent posts are available on <a href="${SUBSTACK_PROFILE_URL}" target="_blank" rel="noreferrer">Substack</a>.</p>`;
+  renderSubstackPosts(container, SUBSTACK_FALLBACK_POSTS);
+
+  const note = document.createElement("p");
+  note.className = "substack-fallback";
+  note.innerHTML =
+    `Read more on <a href="${SUBSTACK_PROFILE_URL}" target="_blank" rel="noreferrer">Substack</a>.`;
+  container.append(note);
 }
 
 async function loadSubstackPosts(container, limit = 5) {
   if (!container) return;
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+
   try {
-    const response = await fetch(SUBSTACK_FEED_URL, { mode: "cors" });
+    const response = await fetch(SUBSTACK_FEED_URL, { mode: "cors", signal: controller.signal });
     if (!response.ok) throw new Error(`Substack feed returned ${response.status}`);
 
     const xml = new DOMParser().parseFromString(await response.text(), "text/xml");
@@ -90,6 +106,8 @@ async function loadSubstackPosts(container, limit = 5) {
     renderSubstackPosts(container, posts);
   } catch (error) {
     renderSubstackFallback(container);
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
