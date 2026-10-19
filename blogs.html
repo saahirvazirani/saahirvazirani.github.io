@@ -33,6 +33,16 @@
         <div id="blog-list" class="blog-list" aria-live="polite"></div>
       </section>
 
+      <section class="section" aria-labelledby="substack-heading">
+        <div class="section-heading">
+          <p class="section-index">02</p>
+          <h2 id="substack-heading">From Substack</h2>
+        </div>
+        <div id="substack-list" class="substack-list" aria-live="polite">
+          <p class="substack-loading">Loading recent posts...</p>
+        </div>
+      </section>
+
       <footer class="site-footer">
         <p>Have a question or want to suggest a topic?</p>
         <p><a href="mailto:vaziranisaahir@gmail.com">vaziranisaahir@gmail.com</a> · <a href="https://substack.com/@saahirvazirani" target="_blank" rel="noreferrer">Substack</a> · <a href="BLOG_TEMPLATE.md">Suggest a post</a></p>
@@ -40,6 +50,7 @@
     </main>
 
     <script src="blogs/posts.js"></script>
+    <script src="blogs/substack.js"></script>
     <script>
       const blogList = document.querySelector("#blog-list");
       const posts = window.BLOG_POSTS || [];
@@ -92,6 +103,8 @@
           blogList.append(article);
         });
       }
+
+      loadSubstackPosts(document.querySelector("#substack-list"));
     </script>
   </body>
 </html>

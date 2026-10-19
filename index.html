@@ -72,6 +72,9 @@
           <span aria-hidden="true"> · </span>
           <a href="BLOG_TEMPLATE.md">Suggest a post</a>
         </p>
+        <div id="latest-substack" class="latest-substack" aria-live="polite">
+          <p class="substack-loading">Loading recent Substack posts...</p>
+        </div>
       </section>
 
       <section class="section" id="research" aria-labelledby="research-heading">
@@ -274,6 +277,7 @@
     </main>
 
     <script src="blogs/posts.js"></script>
+    <script src="blogs/substack.js"></script>
     <script>
       const latestWriting = document.querySelector("#latest-writing");
       const latestPost = (window.BLOG_POSTS || [])[0];
@@ -299,6 +303,8 @@
         article.append(summary);
         latestWriting.replaceChildren(article);
       }
+
+      loadSubstackPosts(document.querySelector("#latest-substack"), 2);
     </script>
   </body>
 </html>
