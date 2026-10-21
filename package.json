@@ -1,0 +1,15 @@
+{
+  "name": "personal-website-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "sync:substack": "node scripts/sync-substack.mjs",
+    "test": "node --test tests/writing-pipeline.test.mjs tests/motion.test.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "5.11.2",
+    "parse5": "8.0.1",
+    "sanitize-html": "2.18.1"
+  }
+}

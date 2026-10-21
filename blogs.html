@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Writing | Saahir Vazirani</title>
     <meta name="description" content="Writing by Saahir Vazirani on AI safety, public policy, and technology." />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#080b12" />
+    <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="styles.css?v=20261020" />
   </head>
   <body>
+    <a class="skip-link" href="#page-title">Skip to content</a>
     <main class="page blog-page">
       <header class="site-header">
         <a class="site-name" href="index.html">Saahir Vazirani</a>
@@ -20,14 +23,13 @@
       </header>
 
       <section class="intro-block blog-intro" aria-labelledby="page-title">
-        <p class="eyebrow"><a href="index.html">← Back to home</a></p>
-        <h1 id="page-title">Writing</h1>
+        <p class="back-link"><a href="index.html">Back to home</a></p>
+        <h1 id="page-title" tabindex="-1">Writing</h1>
         <p class="lede">Notes on AI safety, public policy, technology, and figuring things out in public.</p>
       </section>
 
       <section class="section" aria-labelledby="posts-heading">
         <div class="section-heading">
-          <p class="section-index">01</p>
           <h2 id="posts-heading">Posts</h2>
         </div>
         <div id="blog-list" class="blog-list" aria-live="polite"></div>
@@ -35,7 +37,6 @@
 
       <section class="section" aria-labelledby="substack-heading">
         <div class="section-heading">
-          <p class="section-index">02</p>
           <h2 id="substack-heading">From Substack</h2>
         </div>
         <div id="substack-list" class="substack-list" aria-live="polite">
@@ -50,6 +51,7 @@
     </main>
 
     <script src="blogs/posts.js"></script>
+    <script src="site.js?v=20261020" defer></script>
     <script src="blogs/substack.js?v=2"></script>
     <script>
       const blogList = document.querySelector("#blog-list");

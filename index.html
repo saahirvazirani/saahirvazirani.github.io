@@ -8,9 +8,12 @@
       name="description"
       content="Saahir Vazirani works on AI safety, AI safety entrepreneurship, public policy, and research."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#080b12" />
+    <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="styles.css?v=20261020" />
   </head>
   <body>
+    <a class="skip-link" href="#page-title">Skip to content</a>
     <main class="page">
       <header class="site-header">
         <a class="site-name" href="index.html">Saahir Vazirani</a>
@@ -23,8 +26,9 @@
       </header>
 
       <section class="intro-block" aria-labelledby="page-title">
-        <p class="eyebrow">AI safety · entrepreneurship · public policy · research</p>
-        <h1 id="page-title">Saahir Vazirani</h1>
+        <div class="intro-copy">
+        <h1 id="page-title" tabindex="-1"><span>Saahir</span> <span>Vazirani</span></h1>
+        <p class="fields">AI safety · entrepreneurship · public policy · research</p>
         <p class="lede">
           I work on the technical and policy questions around increasingly capable AI systems:
           how they behave, how they should be governed, and how they can remain useful to the
@@ -39,11 +43,29 @@
           <span aria-hidden="true">/</span>
           <a href="https://saahirvazirani.github.io" target="_blank" rel="noreferrer">Website</a>
         </p>
+        </div>
+        <div class="signal-scene">
+          <svg class="signal-fallback" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+            <g stroke="#4585ff" stroke-width="1.2">
+              <ellipse cx="300" cy="300" rx="230" ry="105" transform="rotate(-35 300 300)" />
+              <ellipse cx="300" cy="300" rx="230" ry="125" transform="rotate(-25 300 300)" />
+              <ellipse cx="300" cy="300" rx="230" ry="150" transform="rotate(-15 300 300)" />
+              <ellipse cx="300" cy="300" rx="230" ry="175" transform="rotate(-5 300 300)" />
+              <ellipse cx="300" cy="300" rx="230" ry="200" transform="rotate(5 300 300)" />
+              <ellipse cx="300" cy="300" rx="230" ry="220" transform="rotate(15 300 300)" />
+            </g>
+          </svg>
+          <canvas class="signal-canvas" aria-hidden="true"></canvas>
+          <div class="signal-controls">
+            <span>Many paths. A safer future.</span>
+            <button class="motion-toggle" type="button" hidden>Pause animation</button>
+          </div>
+        </div>
+        <a class="explore-link" href="#focus-heading">Explore my work <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6" /></svg></a>
       </section>
 
       <section class="section focus-section" aria-labelledby="focus-heading">
         <div class="section-heading">
-          <p class="section-index">01</p>
           <h2 id="focus-heading">What I am thinking about</h2>
         </div>
         <p>
@@ -59,7 +81,6 @@
 
       <section class="section" id="writing" aria-labelledby="writing-heading">
         <div class="section-heading">
-          <p class="section-index">02</p>
           <h2 id="writing-heading">Writing</h2>
         </div>
         <div id="latest-writing" class="latest-writing" aria-live="polite">
@@ -79,119 +100,72 @@
 
       <section class="section" id="research" aria-labelledby="research-heading">
         <div class="section-heading">
-          <p class="section-index">03</p>
           <h2 id="research-heading">Research</h2>
         </div>
         <div class="entry-list">
           <details>
-            <summary>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5806704" target="_blank" rel="noreferrer">
-                Autonomy in Conflict: Legal, Technical, and Strategic Challenges of AI-Enabled Autonomous Weapon Systems Under International Humanitarian Law
-              </a>
-            </summary>
-            <p>Policy paper on treaty mechanisms for reducing the risks posed by autonomous weapons systems.</p>
+            <summary>Autonomy in Conflict: Legal, Technical, and Strategic Challenges of AI-Enabled Autonomous Weapon Systems Under International Humanitarian Law</summary>
+            <p>Policy paper on treaty mechanisms for reducing the risks posed by autonomous weapons systems. <a aria-label="View original: Autonomy in Conflict: Legal, Technical, and Strategic Challenges of AI-Enabled Autonomous Weapon Systems Under International Humanitarian Law" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5806704" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5723002" target="_blank" rel="noreferrer">
-                Towards Human-Centric AI Regulation: Balancing Innovation with Societal Resilience
-              </a>
-            </summary>
-            <p>Research on regulatory approaches that balance innovation, labor, and societal resilience.</p>
+            <summary>Towards Human-Centric AI Regulation: Balancing Innovation with Societal Resilience</summary>
+            <p>Research on regulatory approaches that balance innovation, labor, and societal resilience. <a aria-label="View original: Towards Human-Centric AI Regulation: Balancing Innovation with Societal Resilience" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5723002" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5917022" target="_blank" rel="noreferrer">
-                A.I. as a Strategic Trade Asset: Designing Export Controls for the Next Generation of Semiconductors
-              </a>
-            </summary>
-            <p>Work examining AI as a geopolitical and economic lever in strategic trade policy.</p>
+            <summary>A.I. as a Strategic Trade Asset: Designing Export Controls for the Next Generation of Semiconductors</summary>
+            <p>Work examining AI as a geopolitical and economic lever in strategic trade policy. <a aria-label="View original: A.I. as a Strategic Trade Asset: Designing Export Controls for the Next Generation of Semiconductors" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5917022" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://www.researchgate.net/publication/398761280_Towards_Human-Centric_AI_Regulation_Balancing_Innovation_with_Societal_Resilience" target="_blank" rel="noreferrer">
-                ResearchGate: Towards Human-Centric AI Regulation
-              </a>
-            </summary>
-            <p>Public research page for the human-centric regulation paper.</p>
+            <summary>ResearchGate: Towards Human-Centric AI Regulation</summary>
+            <p>Public research page for the human-centric regulation paper. <a aria-label="View original: ResearchGate: Towards Human-Centric AI Regulation" href="https://www.researchgate.net/publication/398761280_Towards_Human-Centric_AI_Regulation_Balancing_Innovation_with_Societal_Resilience" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://www.researchgate.net/publication/399600742_Strengthening_AI_Treaty_Mechanisms_for_Mitigating_Risks_in_Autonomous_Weapons_Systems" target="_blank" rel="noreferrer">
-                ResearchGate: Strengthening AI Treaty Mechanisms
-              </a>
-            </summary>
-            <p>Public research page for the autonomous weapons treaty paper.</p>
+            <summary>ResearchGate: Strengthening AI Treaty Mechanisms</summary>
+            <p>Public research page for the autonomous weapons treaty paper. <a aria-label="View original: ResearchGate: Strengthening AI Treaty Mechanisms" href="https://www.researchgate.net/publication/399600742_Strengthening_AI_Treaty_Mechanisms_for_Mitigating_Risks_in_Autonomous_Weapons_Systems" target="_blank" rel="noreferrer">View original</a></p>
           </details>
         </div>
       </section>
 
       <section class="section" id="work" aria-labelledby="work-heading">
         <div class="section-heading">
-          <p class="section-index">04</p>
           <h2 id="work-heading">Projects</h2>
         </div>
         <div class="entry-list">
           <details>
-            <summary>
-              <a href="https://apartresearch.com/project/a-defensive-ai-agent-against-large-language-model-llmassisted-polymorphic-malware-g2pf" target="_blank" rel="noreferrer">
-                A Defensive AI Agent Against LLM-Assisted Polymorphic Malware
-              </a>
-            </summary>
-            <p>Hackathon project that placed third and won, focused on detecting and defending against polymorphic malware.</p>
+            <summary>A Defensive AI Agent Against LLM-Assisted Polymorphic Malware</summary>
+            <p>Hackathon project that placed third and won, focused on detecting and defending against polymorphic malware. <a aria-label="View original: A Defensive AI Agent Against LLM-Assisted Polymorphic Malware" href="https://apartresearch.com/project/a-defensive-ai-agent-against-large-language-model-llmassisted-polymorphic-malware-g2pf" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://www.lesswrong.com/posts/e2bmJgBS8kHzeBjwh/can-current-ai-match-or-outmatch-professionals-in" target="_blank" rel="noreferrer">
-                SPAR: GDPval capability demonstration
-              </a>
-            </summary>
-            <p>Built and shipped an interactive demonstration for economically valuable tasks using Flask, React, and model APIs.</p>
+            <summary>SPAR: GDPval capability demonstration</summary>
+            <p>Built and shipped an interactive demonstration for economically valuable tasks using Flask, React, and model APIs. <a aria-label="View original: SPAR: GDPval capability demonstration" href="https://www.lesswrong.com/posts/e2bmJgBS8kHzeBjwh/can-current-ai-match-or-outmatch-professionals-in" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://www.lesswrong.com/posts/zmfXZEsiycGLP9YZW/machine-unlearning-in-large-language-models-a-comprehensive-1" target="_blank" rel="noreferrer">
-                Machine Unlearning in Large Language Models
-              </a>
-            </summary>
-            <p>Explored methods for removing model knowledge while preserving capabilities and avoiding safety failures.</p>
+            <summary>Machine Unlearning in Large Language Models</summary>
+            <p>Explored methods for removing model knowledge while preserving capabilities and avoiding safety failures. <a aria-label="View original: Machine Unlearning in Large Language Models" href="https://www.lesswrong.com/posts/zmfXZEsiycGLP9YZW/machine-unlearning-in-large-language-models-a-comprehensive-1" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://apartresearch.com/project/navigating-safety-measures-for-nuclear-nonproliferation-ai-enabled-early-warning-systems-governance-system-for-detecting-nuclear-enrichment-1z7e" target="_blank" rel="noreferrer">
-                Navigating Safety Measures for Nuclear Nonproliferation
-              </a>
-            </summary>
-            <p>Policy and technical work on AI-enabled early warning systems and nuclear nonproliferation safeguards.</p>
+            <summary>Navigating Safety Measures for Nuclear Nonproliferation</summary>
+            <p>Policy and technical work on AI-enabled early warning systems and nuclear nonproliferation safeguards. <a aria-label="View original: Navigating Safety Measures for Nuclear Nonproliferation" href="https://apartresearch.com/project/navigating-safety-measures-for-nuclear-nonproliferation-ai-enabled-early-warning-systems-governance-system-for-detecting-nuclear-enrichment-1z7e" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://apartresearch.com/project/a-call-for-green-ai-in-california-evaluation-of-existing-and-alternative-regulations-qs1r" target="_blank" rel="noreferrer">
-                A Call for Green AI in California
-              </a>
-            </summary>
-            <p>Research on environmental regulation and policy tradeoffs around greener AI deployment.</p>
+            <summary>A Call for Green AI in California</summary>
+            <p>Research on environmental regulation and policy tradeoffs around greener AI deployment. <a aria-label="View original: A Call for Green AI in California" href="https://apartresearch.com/project/a-call-for-green-ai-in-california-evaluation-of-existing-and-alternative-regulations-qs1r" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
-            <summary>
-              <a href="https://apartresearch.com/project/sleeper-agents-detector" target="_blank" rel="noreferrer">
-                Sleeper Agents Detector
-              </a>
-            </summary>
-            <p>Project exploring methods for detecting hidden or deceptive behavior in AI systems.</p>
+            <summary>Sleeper Agents Detector</summary>
+            <p>Project exploring methods for detecting hidden or deceptive behavior in AI systems. <a aria-label="View original: Sleeper Agents Detector" href="https://apartresearch.com/project/sleeper-agents-detector" target="_blank" rel="noreferrer">View original</a></p>
           </details>
         </div>
       </section>
 
       <section class="section" aria-labelledby="experience-heading">
         <div class="section-heading">
-          <p class="section-index">05</p>
           <h2 id="experience-heading">Experience</h2>
         </div>
         <div class="entry-list">
           <details>
-            <summary><a href="http://triage-sec.com" target="_blank" rel="noreferrer">Triage · Member of Technical Staff</a></summary>
-            <p>Built and tested a Python benchmarking pipeline across Modal, RunPod, and OpenAI-compatible vLLM endpoints; ran 1,200-task controlled experiments and investigated how compute constraints and quantization can change model behavior and create sources of misalignment.</p>
+            <summary>Triage · Member of Technical Staff</summary>
+            <p>Built and tested a Python benchmarking pipeline across Modal, RunPod, and OpenAI-compatible vLLM endpoints; ran 1,200-task controlled experiments and investigated how compute constraints and quantization can change model behavior and create sources of misalignment. <a aria-label="View original: Triage · Member of Technical Staff" href="http://triage-sec.com" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
             <summary>Supervised Program for Alignment Research (SPAR) · Research Fellow</summary>
@@ -218,13 +192,12 @@
 
       <section class="section" aria-labelledby="public-work-heading">
         <div class="section-heading">
-          <p class="section-index">06</p>
           <h2 id="public-work-heading">Public work</h2>
         </div>
         <div class="entry-list">
           <details>
-            <summary><a href="https://www.linkedin.com/posts/saahir-vazirani-5850a9297_yesterday-i-had-the-opportunity-to-step-activity-7331815136397045760-Y7Ye" target="_blank" rel="noreferrer">A4015 / New Jersey Kids Code · Design It For Us</a></summary>
-            <p>Spoke at the Assembly Committee on Science, Innovation, and Technology and later spoke at the Governor's bill signing after passage; advocated for privacy-by-default, youth-safe online design.</p>
+            <summary>A4015 / New Jersey Kids Code · Design It For Us</summary>
+            <p>Spoke at the Assembly Committee on Science, Innovation, and Technology and later spoke at the Governor's bill signing after passage; advocated for privacy-by-default, youth-safe online design. <a aria-label="View original: A4015 / New Jersey Kids Code · Design It For Us" href="https://www.linkedin.com/posts/saahir-vazirani-5850a9297_yesterday-i-had-the-opportunity-to-step-activity-7331815136397045760-Y7Ye" target="_blank" rel="noreferrer">View original</a></p>
           </details>
           <details>
             <summary>Morgan Stanley Finance Academy · Scholar</summary>
@@ -235,7 +208,6 @@
 
       <section class="section" aria-labelledby="education-heading">
         <div class="section-heading">
-          <p class="section-index">07</p>
           <h2 id="education-heading">Education & honors</h2>
         </div>
         <div class="plain-list">
@@ -250,7 +222,6 @@
 
       <section class="section" aria-labelledby="training-heading">
         <div class="section-heading">
-          <p class="section-index">08</p>
           <h2 id="training-heading">Training & tools</h2>
         </div>
         <div class="plain-list">
@@ -263,6 +234,7 @@
       </section>
 
       <footer class="site-footer" id="contact">
+        <h2>Let's think<br />forward.</h2>
         <p>Open to conversations about AI safety, AI safety entrepreneurship, public policy, research, and public-interest technology.</p>
         <p>
           <a href="mailto:vaziranisaahir@gmail.com">vaziranisaahir@gmail.com</a>
@@ -277,6 +249,7 @@
     </main>
 
     <script src="blogs/posts.js"></script>
+    <script src="site.js?v=20261020" defer></script>
     <script src="blogs/substack.js?v=2"></script>
     <script>
       const latestWriting = document.querySelector("#latest-writing");

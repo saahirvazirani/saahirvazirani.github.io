@@ -1,6 +1,7 @@
 // Add new posts to the top of this array. Keep each paragraph as a separate string.
 window.BLOG_POSTS = [
   {
+    slug: "how-getting-rejected-from-nearly-every-college-club-was-a-good-thing-pt-1",
     title: "How Getting Rejected from (nearly) Every College Club Was A Good Thing Pt. 1",
     date: "09/24/2026",
     summary: "What I learned from a difficult college club recruiting process about focus, community, and making an impact.",
