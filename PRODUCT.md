@@ -24,5 +24,8 @@ content source of truth for this visual redesign. Do not invent credentials.
 Static HTML, CSS, and JavaScript, built for GitHub Pages with a small Node-based
 writing pipeline. The site itself does not require a server or JavaScript for
 its article content.
+The homepage introduces Saahir and highlights recent writing. Research owns papers
+and technical projects; Work owns experience and public service; About owns
+education, honors, training, and contact; Writing owns the blog index and articles.
 The inferred primary audience is potential collaborators in AI safety and policy;
 this audience is an implementation assumption, not a new biographical claim.

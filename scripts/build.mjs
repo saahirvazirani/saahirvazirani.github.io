@@ -103,7 +103,7 @@ function article(post) {
   const canonical = `https://saahirvazirani.github.io/blog/${post.slug}/`;
   const source = post.source ? `<p><a href="${escapeHtml(post.source)}" rel="noopener noreferrer">Read the original publication</a></p>` : '';
   const label = post.contentType === 'excerpt' ? '<p class="blog-summary">Excerpt from Substack</p>' : '';
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} | Saahir Vazirani</title><meta name="description" content="${description}"><link rel="canonical" href="${canonical}"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:type" content="article"><meta property="og:url" content="${canonical}"><meta name="twitter:card" content="summary"><meta name="theme-color" content="#080b12"><link rel="stylesheet" href="/styles.css?v=20261020"></head><body><a class="skip-link" href="#page-title">Skip to content</a><main class="page blog-page"><header class="site-header"><a class="site-name" href="/">Saahir Vazirani</a><nav aria-label="Primary navigation"><a href="/blogs.html">Writing</a><a href="/#research">Research</a><a href="/#work">Work</a><a href="/#contact">Contact</a></nav></header><section class="intro-block blog-intro article-intro"><p class="back-link"><a href="/blogs.html">Back to writing</a></p><h1 id="page-title" tabindex="-1">${title}</h1><p class="post-date">${escapeHtml(displayDate(post.date))}</p></section><article class="blog-post article-body">${label}${post.html}${source}</article><footer class="site-footer"><p><a href="/blogs.html">Back to writing</a> · <a href="mailto:vaziranisaahir@gmail.com">Email</a> · <a href="https://substack.com/@saahirvazirani">Substack</a></p></footer></main></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} | Saahir Vazirani</title><meta name="description" content="${description}"><link rel="canonical" href="${canonical}"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:type" content="article"><meta property="og:url" content="${canonical}"><meta name="twitter:card" content="summary"><meta name="theme-color" content="#080b12"><link rel="stylesheet" href="/styles.css?v=20261024"></head><body><a class="skip-link" href="#page-title">Skip to content</a><main class="page blog-page"><header class="site-header"><a class="site-name" href="/">Saahir Vazirani</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/research.html">Research</a><a href="/work.html">Work</a><a href="/about.html">About</a><a href="/blogs.html" aria-current="page">Writing</a></nav></header><section class="intro-block blog-intro article-intro"><p class="back-link"><a href="/blogs.html">Back to writing</a></p><h1 id="page-title" tabindex="-1">${title}</h1><p class="post-date">${escapeHtml(displayDate(post.date))}</p></section><article class="blog-post article-body">${label}${post.html}${source}</article><footer class="site-footer"><p><a href="/blogs.html">Back to writing</a> · <a href="mailto:vaziranisaahir@gmail.com">Email</a> · <a href="https://substack.com/@saahirvazirani">Substack</a></p></footer></main></body></html>`;
 }
 
 function substackCards(posts) {
@@ -173,6 +173,8 @@ export async function build() {
   const substack = await readSnapshot();
   const home = await readFile(join(root, 'index.html'), 'utf8');
   const blog = await readFile(join(root, 'blogs.html'), 'utf8');
+  const sectionFiles = ['research.html', 'work.html', 'about.html'];
+  const sectionPages = await Promise.all(sectionFiles.map(async file => [file, render(await readFile(join(root, file), 'utf8'), {})]));
   const entries = allPosts(posts, substack);
   const homeHtml = render(home, { 'latest-writing': entries.slice(0, 3).map(post => listing(post, true)).join('') || '<p>No posts yet.</p>', 'latest-substack': '' });
   const replacements = { 'blog-list': entries.map(post => listing(post)).join('') || '<p>No posts yet.</p>', 'substack-list': '' };
@@ -183,6 +185,7 @@ export async function build() {
   for (const file of ['styles.css', 'site.js', 'BLOG_TEMPLATE.md', 'assets']) await cp(join(root, file), join(dist, file), { recursive: true });
   await writeFile(join(dist, 'index.html'), homeHtml);
   await writeFile(join(dist, 'blogs.html'), blogHtml);
+  for (const [file, html] of sectionPages) await writeFile(join(dist, file), html);
   for (const page of pages) {
     const directory = join(dist, 'blog', page.slug);
     await mkdir(directory, { recursive: true });

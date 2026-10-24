@@ -7,6 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 BACKUP = ROOT / "archive/site-2026-10-20"
+SITE_PAGES = ("index.html", "research.html", "work.html", "about.html", "blogs.html")
 
 
 class ContentParser(HTMLParser):
@@ -41,16 +42,16 @@ class ContentParser(HTMLParser):
 
 
 class ContentTests(unittest.TestCase):
-    def test_all_homepage_information_preserved(self):
+    def test_all_homepage_information_preserved_across_site(self):
         before = ContentParser((BACKUP / "index.html").read_text())
-        after = ContentParser((ROOT / "index.html").read_text())
+        after = ContentParser("".join((ROOT / file).read_text() for file in SITE_PAGES))
         self.assertFalse(Counter(before.blocks) - Counter(after.blocks))
 
-    def test_all_existing_links_preserved(self):
-        for file in ("index.html", "blogs.html"):
-            before = ContentParser((BACKUP / file).read_text())
-            after = ContentParser((ROOT / file).read_text())
-            self.assertFalse(Counter(before.links) - Counter(after.links), file)
+    def test_all_existing_external_links_preserved(self):
+        before = ContentParser("".join((BACKUP / file).read_text() for file in ("index.html", "blogs.html")))
+        after = ContentParser("".join((ROOT / file).read_text() for file in SITE_PAGES))
+        external = lambda links: [link for link in links if link and ("://" in link or link.startswith("mailto:"))]
+        self.assertFalse(Counter(external(before.links)) - Counter(external(after.links)))
 
     def test_existing_blog_content_unchanged(self):
         file = "blogs/posts.js"
@@ -58,12 +59,21 @@ class ContentTests(unittest.TestCase):
         self.assertEqual(current, (BACKUP / file).read_text())
 
     def test_no_duplicate_ids_and_valid_local_anchors(self):
-        for file in ("index.html", "blogs.html"):
+        for file in SITE_PAGES:
             page = ContentParser((ROOT / file).read_text())
             self.assertEqual(len(page.ids), len(set(page.ids)))
             for link in page.links:
                 if link.startswith("#"):
                     self.assertIn(link[1:], page.ids)
+
+    def test_primary_pages_have_consistent_navigation(self):
+        expected = {"index.html", "research.html", "work.html", "about.html", "blogs.html"}
+        for file in SITE_PAGES:
+            page = ContentParser((ROOT / file).read_text())
+            local_pages = {link.split("#", 1)[0] for link in page.links if link and link.endswith(".html")}
+            self.assertTrue(expected - {file} <= local_pages | {file}, file)
+            source = (ROOT / file).read_text()
+            self.assertEqual(source.count('aria-current="page"'), 1, file)
 
 
 if __name__ == "__main__":

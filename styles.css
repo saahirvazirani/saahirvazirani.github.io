@@ -80,6 +80,16 @@ h2 { margin-bottom: 22px; font-size: clamp(1.65rem, 2.6vw, 2.4rem); letter-spaci
 .section > p:last-child, .plain-list p:last-child { margin-bottom: 0; }
 .focus-section { padding-top: 86px; padding-bottom: 96px; }
 .focus-section > p:first-of-type { font-size: clamp(1.25rem, 2.2vw, 1.9rem); color: var(--ink); line-height: 1.55; letter-spacing: -0.025em; }
+.page-intro { padding: 110px 0 90px; border-bottom: 1px solid var(--rule); }
+.page-intro h1 { max-width: 12ch; margin-bottom: 28px; color: var(--accent); }
+.page-intro .lede { max-width: 54ch; font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
+.page-kicker { margin-bottom: 22px; color: var(--accent); font-size: 0.78rem; letter-spacing: 0.08em; }
+.pathway-list { border-bottom: 1px solid var(--rule); }
+.pathway-link { display: grid; grid-template-columns: 42px minmax(0, 1fr) minmax(180px, 0.7fr); align-items: baseline; gap: 20px; padding: 30px 15px; border-top: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+.pathway-link:hover { background: var(--surface); color: var(--ink); }
+.pathway-link span { color: var(--accent); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.pathway-link strong { font-size: clamp(1.45rem, 2.4vw, 2.25rem); font-weight: 500; letter-spacing: -0.03em; }
+.pathway-link small { color: var(--muted); font-size: 0.88rem; }
 .plain-list strong { color: var(--ink); font-weight: 600; }
 .plain-list p { padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
 .plain-list p:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -184,6 +194,9 @@ details[open] > p { animation: detail-open 260ms var(--ease); }
   .site-footer h2 { margin-bottom: 30px; font-size: 3.7rem; }
   .site-footer p:last-child { overflow-wrap: anywhere; }
   .blog-intro { padding: 52px 0 34px; }
+  .page-intro { padding: 64px 0 52px; }
+  .pathway-link { grid-template-columns: 30px 1fr; gap: 12px; padding: 24px 0; }
+  .pathway-link small { grid-column: 2; }
   .blog-post > p { font-size: 1rem; }
 }
 

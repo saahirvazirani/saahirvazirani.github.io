@@ -15,6 +15,8 @@ The Awwwards animation collection informs the contrast in scale and composition.
   custom cursor, autoplay audio, loading gate or content-dependent animation.
 - Desktop content uses a left heading rail and a wider right reading column;
   mobile becomes a single column. Reading pages prioritize a comfortable measure.
+- The animated opening belongs only to the homepage. Research, Work, About, and
+  Writing are separate, quieter reading pages with consistent primary navigation.
 - Motion pauses offscreen, in background tabs, on request, and by default with
   reduced-motion preferences. All biography content works without JavaScript.
 - Preserve every existing substantive statement and destination; do not add claims.

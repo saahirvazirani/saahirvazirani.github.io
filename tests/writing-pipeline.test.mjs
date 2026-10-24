@@ -61,8 +61,9 @@ test('build renders source templates and nested post pages without browser feed'
   const post = (await localPosts())[0];
   const home = await readFile(join(root, 'dist/index.html'), 'utf8');
   const index = await readFile(join(root, 'dist/blogs.html'), 'utf8');
+  const sectionPages = await Promise.all(['research.html', 'work.html', 'about.html'].map(file => readFile(join(root, 'dist', file), 'utf8')));
   const article = await readFile(join(root, 'dist/blog', post.slug, 'index.html'), 'utf8');
-  for (const page of [home, index, article]) {
+  for (const page of [home, index, article, ...sectionPages]) {
     assert.doesNotMatch(page, /loadSubstackPosts|blogs\/substack\.js|blogs\/posts\.js/);
   }
   assert.match(home, /Coming soon/);
@@ -74,6 +75,12 @@ test('build renders source templates and nested post pages without browser feed'
   assert.ok(article.includes(post.body[0]));
   assert.match(article, /rel="canonical"/);
   assert.match(article, /property="og:title"/);
+  assert.match(sectionPages[0], /Autonomy in Conflict/);
+  assert.match(sectionPages[1], /Triage · Member of Technical Staff/);
+  assert.match(sectionPages[2], /Princeton University/);
+  for (const [name, page] of [['home', home], ['writing', index], ['research', sectionPages[0]], ['work', sectionPages[1]], ['about', sectionPages[2]]]) {
+    assert.equal((page.match(/aria-current="page"/g) || []).length, 1, name);
+  }
   const substack = (await readSnapshot()).find(entry => entry.link.endsWith('/coming-soon'));
   const substackPage = await readFile(join(root, 'dist/blog/substack-coming-soon/index.html'), 'utf8');
   assert.ok(substackPage.includes(substack.body));
