@@ -45,7 +45,13 @@ class ContentTests(unittest.TestCase):
     def test_all_homepage_information_preserved_across_site(self):
         before = ContentParser((BACKUP / "index.html").read_text())
         after = ContentParser("".join((ROOT / file).read_text() for file in SITE_PAGES))
+        before.blocks.remove("Princeton University · B.S.E. in Computer Science · expected May 2030")
         self.assertFalse(Counter(before.blocks) - Counter(after.blocks))
+
+    def test_current_princeton_degree_is_undecided_ab(self):
+        about = ContentParser((ROOT / "about.html").read_text())
+        self.assertIn("Princeton University · Bachelor of Arts (A.B.) · expected May 2030", about.blocks)
+        self.assertFalse(any("Princeton University" in block and "in Computer Science" in block for block in about.blocks))
 
     def test_all_existing_external_links_preserved(self):
         before = ContentParser("".join((BACKUP / file).read_text() for file in ("index.html", "blogs.html")))
