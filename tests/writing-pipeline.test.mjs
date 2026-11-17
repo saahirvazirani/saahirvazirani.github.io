@@ -77,6 +77,7 @@ test('build renders source templates and nested post pages without browser feed'
   assert.match(article, /property="og:title"/);
   assert.match(sectionPages[0], /Autonomy in Conflict/);
   assert.match(sectionPages[1], /Triage · Member of Technical Staff/);
+  assert.match(sectionPages[1], /Cardboard · Student Ambassador/);
   assert.match(sectionPages[2], /Princeton University/);
   for (const [name, page] of [['home', home], ['writing', index], ['research', sectionPages[0]], ['work', sectionPages[1]], ['about', sectionPages[2]]]) {
     assert.equal((page.match(/aria-current="page"/g) || []).length, 1, name);
